@@ -1,0 +1,9 @@
+- hosts: localhost
+  gather_facts: false
+  connection: local
+  tasks:
+    - ansible.builtin.assert:
+        that:
+          - "('42s' | community.general.to_seconds) == 42"
+    - ansible.builtin.debug:
+        msg: "{{ '42s' | community.general.to_seconds }}"

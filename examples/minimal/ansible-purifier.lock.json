@@ -1,0 +1,34 @@
+{
+  "entries": [
+    {
+      "ansible": {
+        "name": "community.general",
+        "version": "14.0.0"
+      },
+      "hash": "sha256-uv4roCNofIr96+FrlZqFgDbA6lLktkxUfoda4a6WtdU=",
+      "mirrors": [],
+      "path": "artifacts/community.general.tar.gz",
+      "url": "https://galaxy.ansible.com/api/v3/plugin/ansible/content/published/collections/artifacts/community-general-14.0.0.tar.gz"
+    },
+    {
+      "ansible": {
+        "name": "community.library_inventory_filtering_v1",
+        "version": "1.1.5"
+      },
+      "hash": "sha256-y7nobFsXIN8h6UDO3NLz4SJsOCYmI+CQqINxJhBzOFE=",
+      "mirrors": [],
+      "path": "artifacts/community.library_inventory_filtering_v1.tar.gz",
+      "url": "https://galaxy.ansible.com/api/v3/plugin/ansible/content/published/collections/artifacts/community-library_inventory_filtering_v1-1.1.5.tar.gz"
+    }
+  ],
+  "extraInputs": [],
+  "inputs": {
+    "requirements.yml": {
+      "sha256": "ea504fa6249543c6a68ffdf24841ef866af712134ceebc770b7da208b4dd1e91"
+    }
+  },
+  "purifier": "ansible",
+  "requirements": "requirements.yml",
+  "sdk": "5bbfc4118f26ccdf0d473ac6a3a495638685fbb4a1417e3d6626e5e866a8a430",
+  "version": 1
+}
