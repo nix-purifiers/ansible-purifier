@@ -21,9 +21,9 @@ jobs:
     permissions:
       contents: write
       actions: write
-    uses: nix-purifiers/nix-purifiers.github.io/.github/workflows/purifier-release.yml@863546efefc5e4c132367bb8448e1a4bd9bec6a6
+    uses: nix-purifiers/nix-purifiers.github.io/.github/workflows/purifier-release.yml@48229b363c988991f0833a1bbae739b52a62b4e2
     with:
-      infrastructure_ref: 863546efefc5e4c132367bb8448e1a4bd9bec6a6
+      infrastructure_ref: 48229b363c988991f0833a1bbae739b52a62b4e2
       sha: ${{ github.event.workflow_run.head_sha || github.sha }}
       kind: source
       series: '0.1'
