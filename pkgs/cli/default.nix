@@ -16,15 +16,15 @@
 stdenvNoCC.mkDerivation {
   pname = "ansible-purifier";
   version = "0.1.0";
-  src = ../.;
+  src = ../..;
   nativeBuildInputs = [ makeWrapper ];
   dontBuild = true;
   installPhase = ''
     mkdir -p "$out/bin" "$out/lib/ansible-purifier"
-    cp -r ansible_purifier nix native "$out/lib/ansible-purifier/"
+    cp -r ansible_purifier pkgs lib-overlays native "$out/lib/ansible-purifier/"
     install -m755 bin/ansible-purifier "$out/bin/ansible-purifier"
     for file in realize release; do
-      substituteInPlace "$out/lib/ansible-purifier/nix/$file.nix" --replace-fail '@nixpkgs@' '${nixpkgsSrc}' --replace-fail '@purifier@' '${purifierSrc}'
+      substituteInPlace "$out/lib/ansible-purifier/pkgs/build-ansible-project/$file.nix" --replace-fail '@nixpkgs@' '${nixpkgsSrc}' --replace-fail '@purifier@' '${purifierSrc}'
     done
     wrapProgram "$out/bin/ansible-purifier" \
       --prefix PATH : ${
