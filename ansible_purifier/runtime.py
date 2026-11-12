@@ -18,7 +18,7 @@ def prepare(root, companion):
     expression = (
         "import "
         + json.dumps(
-            os.environ["ANSIBLE_PURIFIER_SDK"] + "/lib/ansible-purifier/nix/realize.nix"
+            os.environ["ANSIBLE_PURIFIER_SDK"] + "/lib/ansible-purifier/pkgs/build-ansible-project/realize.nix"
         )
         + " {root="
         + json.dumps(str(root))

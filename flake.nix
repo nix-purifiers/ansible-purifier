@@ -18,7 +18,7 @@
       ];
       forAll = nixpkgs.lib.genAttrs systems;
       overlay = final: prev: {
-        ansible-purifier = import ./nix/scope.nix {
+        ansible-purifier = import ./pkgs/default.nix {
           pkgs = final;
           nixpkgsSrc = nixpkgs;
           purifierSrc = purifier;
@@ -44,7 +44,7 @@
           meta.description = "Lock native Ansible resources";
         };
       });
-      lib.ansible-purifier.readLock = import ./nix/read-lock.nix { lib = nixpkgs.lib; };
+      lib.ansible-purifier = (nixpkgs.lib.extend (import ./lib-overlays/default)).ansible-purifier;
       checks = forAll (
         system:
         let

@@ -24,7 +24,9 @@
   version ? "v0.1.0",
 }:
 let
-  lock = purifier.checkLock (import ./read-lock.nix { inherit lib; } { inherit src lockFile; });
+  lock = purifier.checkLock (
+    import ../../lib-overlays/default/read-lock.nix { inherit lib; } { inherit src lockFile; }
+  );
   prepared = import ./environment.nix scope { inherit lock fetchers; };
   source = lib.cleanSourceWith {
     inherit src;

@@ -79,7 +79,7 @@ def main_impl():
             "import "
             + json.dumps(
                 os.environ["ANSIBLE_PURIFIER_SDK"]
-                + "/lib/ansible-purifier/nix/release.nix"
+                + "/lib/ansible-purifier/pkgs/build-ansible-project/release.nix"
             )
             + " {root="
             + json.dumps(str(root))
